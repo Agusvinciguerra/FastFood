@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -74.293304, y: 8.877897, z: -2.0703125}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3094320024676818952}
   - {fileID: 3094320026265057179}
@@ -63,8 +64,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3094320024676818944}
   m_LocalRotation: {x: 0.04196279, y: -0, z: -0, w: 0.9991192}
-  m_LocalPosition: {x: 27.23, y: -6.5, z: -12.000001}
+  m_LocalPosition: {x: 58.249245, y: -10.425234, z: 5.378774}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6700620417927733575}
   m_RootOrder: 0
@@ -80,12 +82,12 @@ Camera:
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.6691177, g: 0.6691177, b: 0.6691177, a: 0.019607844}
-  m_projectionMatrixMode: 1
+  m_projectionMatrixMode: 2
   m_GateFitMode: 2
   m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
+  m_SensorSize: {x: 10.26, y: 7.49}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 32.96973
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -94,9 +96,9 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 12.960793
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 6.9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -141,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HorizontalLookDistance: 3
-  CameraOffset: {x: 3, y: 2, z: 0}
+  CameraOffset: {x: 8, y: 0, z: 0}
   LookAheadTrigger: 0.1
   ManualUpDownLookDistance: 3
   ResetSpeed: 0.5
@@ -150,13 +152,15 @@ MonoBehaviour:
   MaximumZoom: 10
   ZoomSpeed: 0.4
   PixelPerfect: 0
-  ReferenceVerticalResolution: 768
-  ReferencePixelsPerUnit: 32
+  ReferenceVerticalResolution: 384
+  ReferencePixelsPerUnit: 64
   EnableEffectsOnMobile: 0
   InstantRepositionCameraOnRespawn: 0
   AssignCameraOnSpawn: 1
   Target: {fileID: 0}
   TargetController: {fileID: 0}
+  StartFollowingBtn: 0
+  StopFollowingBtn: 0
 --- !u!114 &3094320024676818946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,8 +284,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3094320026265057177}
   m_LocalRotation: {x: 0.041962795, y: 0, z: 0, w: 0.9991192}
-  m_LocalPosition: {x: 27.23, y: -6.5, z: -12}
+  m_LocalPosition: {x: 48.68, y: -6.5, z: -15.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3094320026325672344}
   m_Father: {fileID: 6700620417927733575}
@@ -313,7 +318,10 @@ MonoBehaviour:
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
+    ModeOverride: 0
     LensShift: {x: 0, y: 0}
+    GateFit: 2
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -350,6 +358,8 @@ MonoBehaviour:
   InitialPerspectiveZoom: 5
   PerspectiveZoomSpeed: 0.01
   InstantRepositionCameraOnRespawn: 1
+  StartFollowingBtn: 0
+  StopFollowingBtn: 0
 --- !u!114 &3094320026265057181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,9 +389,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ApplyAfter: 1
   m_ChannelMask: 1
   m_Gain: 1
   m_Use2DDistance: 0
+  m_UseCameraSpace: 0
+  m_ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    m_AmplitudeGain: 0
+    m_FrequencyGain: 0
+    m_Duration: 0
+    m_NoiseOffsets: {x: -541.61475, y: -260.70105, z: -512.4667}
 --- !u!114 &4140841135987101789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,6 +451,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 71.51215, y: 2.2256317, z: -0.3732071}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3094320026265057179}
   m_RootOrder: 0
@@ -461,12 +480,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
   m_LookaheadTime: 0.3
   m_LookaheadSmoothing: 20
   m_LookaheadIgnoreY: 1
   m_XDamping: 0.2
   m_YDamping: 1
   m_ZDamping: 1
+  m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.605
   m_CameraDistance: 12
@@ -506,7 +527,7 @@ MonoBehaviour:
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 0
   m_FrequencyGain: 0
-  mNoiseOffsets: {x: 0, y: 0, z: 0}
+  mNoiseOffsets: {x: 281.48813, y: 494.43268, z: -192.59753}
 --- !u!1001 &6917586310278293451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -514,6 +535,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6700620417927733575}
     m_Modifications:
+    - target: {fileID: 4285925868309877713, guid: ecb34c7ba147ca0428e19c178a3223d1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4285925868309877713, guid: ecb34c7ba147ca0428e19c178a3223d1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -531,6 +557,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4285925868309877713, guid: ecb34c7ba147ca0428e19c178a3223d1,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4285925868309877713, guid: ecb34c7ba147ca0428e19c178a3223d1,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
@@ -543,16 +574,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4285925868309877713, guid: ecb34c7ba147ca0428e19c178a3223d1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4285925868309877713, guid: ecb34c7ba147ca0428e19c178a3223d1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4285925868309877713, guid: ecb34c7ba147ca0428e19c178a3223d1,
         type: 3}
